@@ -67,6 +67,7 @@ The plugin exposes a `[slider]`-shortcode, a Page Type and a template-partial. T
 
 ### Example
 
+```markdown
 [slider a11y.enabled autoHeight="true"]
 
 ![Image 1](image1.jpg)
@@ -76,3 +77,4 @@ The plugin exposes a `[slider]`-shortcode, a Page Type and a template-partial. T
 ![Image 1](image3.jpg)
 
 [/slider]
+```
