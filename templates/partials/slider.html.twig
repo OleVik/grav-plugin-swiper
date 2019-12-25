@@ -13,5 +13,3 @@
     <div class="{{ params.scrollbar.el|default('swiper-scrollbar')|replace({'.': ''}) }}"></div>
     {% endif %}
 </div>
-
-{% do assets.addInlineJs("var Swiper_" ~ id ~ " = new Swiper('#" ~ id ~ "', " ~ json_params ~ ");") %}

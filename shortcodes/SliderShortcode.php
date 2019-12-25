@@ -62,7 +62,6 @@ class SliderShortcode extends Shortcode
             $defaults,
             [
                 'a11y' => [
-                    'enabled' => true,
                     'prevSlideMessage' => ucfirst(
                         $language->translate(['THEME_SCHOLAR.GENERIC.PREVIOUS'])
                     ),
@@ -83,14 +82,18 @@ class SliderShortcode extends Shortcode
             }
         }
         $parameters = array_merge($defaults, $parameters);
+        $id = Utils::generateRandomString(24);
         $output = $this->twig->processTemplate(
             'partials/slider.html.twig',
             [
-                'id' => Utils::generateRandomString(24),
+                'id' => $id,
                 'content' => self::rewrap($content),
-                'params' => $parameters,
-                'json_params' => json_encode($parameters)
+                'params' => $parameters
             ]
+        );
+        $this->shortcode->addAssets(
+            'inlineJs',
+            'var Swiper_' . $id . ' = new Swiper("#' . $id . '", ' . json_encode($parameters) . ');'
         );
         return $output;
     }
