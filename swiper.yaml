@@ -1,4 +1,6 @@
 enabled: true
+css: true
+js: true
 templates: true
 shortcodes: true
 defaults:

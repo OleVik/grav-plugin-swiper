@@ -62,7 +62,7 @@ The plugin exposes a `[slider]`-shortcode, a Page Type and a template-partial. T
     - Options are set with the dot-notation format
     - Options with no explicit value are interpreted as `true`
 - Slides can contain any content that Swiper accepts, and each Slide within `[slider]` and `[/slider]` must be separated by a new line
-- Assets are loaded with either of the plugin's templates, and added to Grav's assets
+- Assets are loaded by default
 - Default settings can be set with the `defaults` in `/user/config/plugins/swiper.yaml`
 
 ### Example

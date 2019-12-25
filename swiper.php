@@ -56,7 +56,8 @@ class SwiperPlugin extends Plugin
         $this->enable(
             [
                 'onShortcodeHandlers' => ['shortcodes', 0],
-                'onTwigTemplatePaths' => ['templates', 0]
+                'onTwigTemplatePaths' => ['templates', 0],
+                'onAssetsInitialized' => ['assets', 0]
             ]
         );
     }
@@ -82,6 +83,16 @@ class SwiperPlugin extends Plugin
     {
         if ($this->config->get('plugins.swiper.shortcodes')) {
             $this->grav['shortcode']->registerAllShortcodes(__DIR__ . '/shortcodes');
+        }
+    }
+
+    public function assets()
+    {
+        if ($this->config->get('plugins.swiper.css')) {
+            $this->grav['assets']->addCss('plugins://swiper/node_modules/swiper/css/swiper.min.css');
+        }
+        if ($this->config->get('plugins.swiper.js')) {
+            $this->grav['assets']->addJs('plugins://swiper/node_modules/swiper/js/swiper.min.js');
         }
     }
 }
