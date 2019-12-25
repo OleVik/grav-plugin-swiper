@@ -50,7 +50,7 @@ defaults:
   lazy: true
 ```
 
-The `enabled`-option enables or disables the plugin, the `templates`-option enables or disables the plugin's templates, and the `templates`-option enables or disables the plugin's shortcodes. The `defaults`-option sets the default settings for Swiper.
+The `enabled`-option enables or disables the plugin, the `templates`-option enables or disables the plugin's templates, and the `shortcodes`-option enables or disables the plugin's shortcodes. The `defaults`-option sets the default settings for Swiper.
 
 Note that if you use the Admin Plugin, a file with your configuration named swiper.yaml will be saved in the `user/config/plugins/`-folder once the configuration is saved in the Admin.
 
