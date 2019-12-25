@@ -86,13 +86,22 @@ class SwiperPlugin extends Plugin
         }
     }
 
+    /**
+     * Register assets
+     *
+     * @return void
+     */
     public function assets()
     {
         if ($this->config->get('plugins.swiper.css')) {
-            $this->grav['assets']->addCss('plugins://swiper/node_modules/swiper/css/swiper.min.css');
+            $this->grav['assets']->addCss(
+                'plugins://swiper/node_modules/swiper/css/swiper.min.css'
+            );
         }
         if ($this->config->get('plugins.swiper.js')) {
-            $this->grav['assets']->addJs('plugins://swiper/node_modules/swiper/js/swiper.min.js');
+            $this->grav['assets']->addJs(
+                'plugins://swiper/node_modules/swiper/js/swiper.min.js'
+            );
         }
     }
 }
